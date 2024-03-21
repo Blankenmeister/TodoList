@@ -55,9 +55,8 @@ public function getId()
         return [
             "id" => $this->id,
             "titre" => $this->titre,
-            "description" => $this->,
-            "email" => $this->email,
-            "motDePasse" => $this->motDePasse,
+            "description" => $this->description,
+            "date" => $this->date,
         ];
     }
 
