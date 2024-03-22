@@ -7,7 +7,7 @@ class UserRepository extends Database
 {
     public function getAll()
     {
-        $data = $this->getDb()->query('SELECT * FROM user');
+        $data = $this->getDb()->query('SELECT * FROM todo_user');
 
         $users = [];
 
@@ -28,7 +28,7 @@ class UserRepository extends Database
 
     public function findById($userId)
     {
-        $request = 'SELECT * FROM user WHERE id = :id';
+        $request = 'SELECT * FROM todo_user WHERE id = :id';
 
         $query = $this->getDb()->prepare($request);
 
@@ -51,7 +51,7 @@ class UserRepository extends Database
 
     public function create($newUser)
     {
-        $request = 'INSERT INTO user (nom, prenom, email, motDePasse) VALUES (:nom, :prenom, :email, :motDePasse)';
+        $request = 'INSERT INTO todo_user (nom, prenom, email, motDePasse) VALUES (:nom, :prenom, :email, :motDePasse)';
 
         $query = $this->getDb()->prepare($request);
 
@@ -61,11 +61,12 @@ class UserRepository extends Database
             'email' => $newUser->getEmail(),
             'motDePasse' => $newUser->getMotDePasse(),
         ]);
+        return $this->getDb()->lastInsertId();
     }
 
     public function update($user)
     {
-        $request = 'UPDATE user SET nom = :nom, prenom = :prenom, email = :email, motDePasse = :motDePasse WHERE id = :id';
+        $request = 'UPDATE todo_user SET nom = :nom, prenom = :prenom, email = :email, motDePasse = :motDePasse WHERE id = :id';
 
         $query = $this->getDb()->prepare($request);
 

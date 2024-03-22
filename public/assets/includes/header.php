@@ -12,7 +12,7 @@
  
 <!-- Modal Inscription -->
 
-<form action="src/traitement.php" method="post" onsubmit="return Validation();">
+
 <div class="modal fade" id="modalInscription" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -23,35 +23,36 @@
       <div class="modal-body">
 
 <!-- formulaire inscription -->
+<form>
       <div class="input-group mb-3">
-  <span class="input-group-text" id="nom">Nom</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <span class="input-group-text">Nom</span>
+  <input type="text" class="form-control" id="nom" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
-  <span class="input-group-text" id="prenom">Prénom</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <span class="input-group-text">Prénom</span>
+  <input type="text" class="form-control" id="prenom" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
-  <span class="input-group-text" id="mail">Email</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <span class="input-group-text">Email</span>
+  <input type="text" class="form-control" id="mail" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
-  <span class="input-group-text" id="password">Mot de passe</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <span class="input-group-text">Mot de passe</span>
+  <input type="password" class="form-control" id="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
-  <span class="input-group-text" id="password2">Mot de passe</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <span class="input-group-text">Répéter le mot de passe</span>
+  <input type="password" class="form-control" id="password2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
-        
-      </div>
+</div>
 
 <!-- fin formulaire inscription -->
-<div id="message"></div>
+
       <div class="modal-footer">
         
         <div id="buttonValider">
-        <input class="btn btn-success" type="submit" onclick="appelAjax()" value="Valider">
+        <button class="btn btn-success" onclick="appelAjax(event)">Valider</button>
+        <div id="message"></div>
         </div>
       </div>
       
@@ -60,6 +61,7 @@
 </div>
 </form>
 <!-- fin Modal inscription -->
+
 
 <button id="btnConnexion" class="btn btn-outline-light me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#modalConnexion">Connexion</button>
  

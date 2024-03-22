@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ ."/repository/UserRepository.php";
+require_once __DIR__ ."/repositories/UserRepository.php";
 
 $userRepository = new UserRepository();
 
@@ -18,81 +18,13 @@ $userRepository = new UserRepository();
 <body>
 
 <?php
-session_start();
 
-if (isset($_SESSION['connecté']) && !empty($_SESSION['user'])) {
-  
-  header('location:profil.php');
-  die;
-}
 
-// include "./public/assets/includes/header.php"; 
+include "./public/assets/includes/header.php"; 
 
 ?>
 
-<header>
-<nav class="navbar navbar-dark bg-success">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="./public/assets/image/logoBlanc.svg" alt="Logo" width="40" height="30" class="d-inline-block align-text-top">
-      TO-DO List
-    </a>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
-  <button id="btnInscription" class="btn btn-outline-light me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#modalInscription">Inscription</button>
- 
-<!-- Modal Inscription -->
-
-<form>
-<div class="modal fade" id="modalInscription" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-<!-- formulaire inscription -->
-      <div class="input-group mb-3">
-  <span class="input-group-text">Nom</span>
-  <input type="text" class="form-control" id="nom" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-</div>
-<div class="input-group mb-3">
-  <span class="input-group-text">Prénom</span>
-  <input type="text" class="form-control" id="prenom" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-</div>
-<div class="input-group mb-3">
-  <span class="input-group-text">Email</span>
-  <input type="text" class="form-control" id="mail" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-</div>
-<div class="input-group mb-3">
-  <span class="input-group-text">Mot de passe</span>
-  <input type="password" class="form-control" id="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-</div>
-<div class="input-group mb-3">
-  <span class="input-group-text">Répéter le mot de passe</span>
-  <input type="password" class="form-control" id="password2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-</div>
-        
-      </div>
-
-<!-- fin formulaire inscription -->
-
-      <div class="modal-footer">
-        
-        <div id="buttonValider">
-        <button class="btn btn-success" onclick="appelAjax(event)">Valider</button>
-        <div id="message"></div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</div>
-</form>
-<!-- fin Modal inscription -->
-<div id='reponse'></div>
 <button id="btnConnexion" class="btn btn-outline-light me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#modalConnexion">Connexion</button>
  
 <!-- Modal Connexion -->
@@ -171,7 +103,7 @@ if (isset($_SESSION['connecté']) && !empty($_SESSION['user'])) {
     <option value="3">Urgente</option>
   </select>
   <label class="input-group-text" for="inputGroupSelect01">Catégories</label>
-  <select class="form-select" id="inputGroupSelect01">
+  <select class="form-select" id="inputGroupSelect02">
     <option selected>Sectionner</option>
     <option value="1">Quotidient</option>
     <option value="2">Travail</option>

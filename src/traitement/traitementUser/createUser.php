@@ -27,5 +27,5 @@ if (
 
     $userRepository->create($newUser);
 
-    header('Location: ./../../index.php');
+    
 }

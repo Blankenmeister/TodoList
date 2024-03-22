@@ -1,7 +1,7 @@
 function appelAjax(event) {
 event.preventDefault();
 
-  console.log('coucou2');
+  // console.log('coucou2js');
 
 
 
@@ -29,8 +29,8 @@ event.preventDefault();
     requete.onreadystatechange = function() {
   
       if (requete.readyState === 4 && requete.status === 200) {
-        reponse.innerHTML += JSON.parse(requete.responseText); 
-  
+        JSON.parse(requete.responseText); 
+        // window.location.reload();
       }
     }
   }
