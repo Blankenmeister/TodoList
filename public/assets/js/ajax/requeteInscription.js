@@ -29,7 +29,7 @@ event.preventDefault();
     requete.onreadystatechange = function() {
   
       if (requete.readyState === 4 && requete.status === 200) {
-        JSON.parse(requete.responseText); 
+        message.innerHTML += JSON.parse(requete.responseText); 
         // window.location.reload();
       }
     }

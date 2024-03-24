@@ -27,7 +27,7 @@ if (!empty(file_get_contents('php://input'))) {
 
     $userId = $userRepository->create($newUser);
 
-    echo($userId);
+    echo('Vous êtes bien inscrit');
 
     
 
