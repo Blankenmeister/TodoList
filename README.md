@@ -27,7 +27,7 @@ Consulter son compte après connexion.
 Modifier son mail, nom, prénom, mot de passe.  
 Supprimer son compte.  
 ​
-### Liste des livrables :
+### Liste des livrables:
 MCD de la base de données.  
 Maquettes / wireframes.  
 Dépôt GitHub avec README.  
@@ -37,9 +37,7 @@ Dépôt GitHub avec README.
 Lors de l'installation en production, veuillez renseigner dans le fichier config.php les bonnes informations relatives à la base de données.
 
 ### MIGRATION
-Lors de l'installation, la base de données va initialiser le code du fichier stocké dans les Migrations.
-
-Si vous souhaitez faire des modifications avant la création de la base de données, c'est donc dans ce fichier que vous devez modifier les choses.
+Le fichier script SQL est stocké dans le dossier Migration.
 
 ### VERSIONS
 Le programme a été conçu avec:  
