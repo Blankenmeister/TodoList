@@ -2,7 +2,7 @@
 <header>
 <nav class="navbar navbar-dark bg-success">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.php#">
       <img src="./public/assets/image/logoBlanc.svg" alt="Logo" width="40" height="30" class="d-inline-block align-text-top">
       TO-DO List
     </a>

@@ -25,55 +25,6 @@ include "./public/assets/includes/header.php";
 ?>
 
 
-<button id="btnConnexion" class="btn btn-outline-light me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#modalConnexion">Connexion</button>
- 
-<!-- Modal Connexion -->
-
-<div class="modal fade" id="modalConnexion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-Connexion" id="exampleModalLabel">Connexion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-<!-- formulaire Connexion -->
-<form action="src/traitement.php" method="post" onsubmit="return Validation();">
-      <div class="input-group mb-3">
-  <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-</div>
-
-<div class="input-group mb-3">
-  <span class="input-group-text" id="inputGroup-sizing-default">Mot de passe</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-</div>
-        </div>
-</form>
-<!-- fin formulaire Connexion -->
-
-      <div class="modal-footer">
-        
-        <div id="buttonValider">
-        <input class="btn btn-success" type="submit" value="Valider">
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</div>
-<!-- fin Modal Connexion -->
-
-  
-</div>
-  </div>
-</nav>
-</header>
-
-
-
-
 <!-- liste des taches -->
 
 <div class="boxTask">
@@ -84,26 +35,26 @@ include "./public/assets/includes/header.php";
   <a href="#" class="list-group-item list-group-item-action">Courses<span class="badge rounded-pill text-bg-danger">Urgent</span></a>
   
 <!-- formulaire -->
-<form action="src/traitement.php" method="post" onsubmit="return Validation();">
+<form>
 <div class="formTask">
 <div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Titre</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input type="text" class="form-control" id="titre" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Descriptif</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input type="text" class="form-control" id="description" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3d-grid d-md-flex">
   <label class="input-group-text" for="inputGroupSelect01">Priorités</label>
-  <select class="form-select" id="inputGroupSelect01">
+  <select class="form-select" id="priorites">
     <option selected>Sectionner</option>
     <option value="1">Normale</option>
     <option value="2">Importante</option>
     <option value="3">Urgente</option>
   </select>
   <label class="input-group-text" for="inputGroupSelect01">Catégories</label>
-  <select class="form-select" id="inputGroupSelect02">
+  <select class="form-select" id="categories">
     <option selected>Sectionner</option>
     <option value="1">Quotidient</option>
     <option value="2">Travail</option>
@@ -116,9 +67,10 @@ include "./public/assets/includes/header.php";
     <input type="date" id="start" name="trip-start" value="2024-02-22" min="2018-01-01" max="202">
 </div>
 
-<div id="buttonValider" class="d-grid gap-2 d-md-block">
-<input class="btn btn-success" type="submit" value="Valider">
-</div>
+
+<button class="btn btn-success" onclick="AjaxTask(event)">Valider</button>
+<div id="message"></div>
+
 </div>
 </div>
 </form>
@@ -130,5 +82,6 @@ include "./public/assets/includes/header.php";
 
 <script src="./public/assets/js/ajax/requeteInscription"></script>
 <script src="./public/assets/js/ajax/requeteConnexion"></script>
+<script src="./public/assets/js/ajax/requeteTask"></script>
 </body>
 </html>

@@ -39,15 +39,17 @@ public function getId()
         $this->titre = $description;
     }
 
-    public function getDate()
-    {
-        return $this->date;
-    }
+    public function getDate(): string
+  {
+    return $this->date->format('Y-m-d');
+  }
 
-    public function setDate($date)
-    {
-        $this->titre = $date;
-    }
+  public function setDate(string|DateTime $date)
+  {
+    
+      $this->date = $date;
+   
+  }
 
 
     public function toAssociativeArray()
