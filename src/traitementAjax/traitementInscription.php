@@ -39,31 +39,33 @@ require_once __DIR__ .'/../../repositories/UserRepository.php';
 if (!empty(file_get_contents('php://input'))) {
     $data = json_decode(file_get_contents('php://input'));
 
-  $nom = htmlspecialchars($data->nom);
-  $prenom = htmlspecialchars($data->prenom);
-  $email = htmlspecialchars($data->email);
-  $password = $data->password;
-  $password2 = $data->password2;
+    $nom = htmlspecialchars($data->nom);
+    $prenom = htmlspecialchars($data->prenom);
+    $emailInscription = htmlspecialchars($data->emailInscription);
+    $passwordInscription = $data->passwordInscription;
+    $password2Inscription = $data->password2Inscription;
 
 
+//Vérification des 2 mots de passes
+  if ($passwordInscription === $password2Inscription) {
 
-  if ($password === $password2) {
+    $hashedPasswordInscription = password_hash($passwordInscription, PASSWORD_DEFAULT);
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
+//instanciation du nouvel utilisateur
     $newUser = new User(
       null,
       $nom,
       $prenom,
-      $email,
-      $hashedPassword
+      $emailInscription,
+      $hashedPasswordInscription
   );
 
   $userRepository = new UserRepository();
 
   $userId = $userRepository->create($newUser);
 
-  echo json_encode($hashedPassword);
+  echo json_encode($hashedPasswordInscription);
 
   }
 

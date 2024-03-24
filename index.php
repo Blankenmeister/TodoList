@@ -129,5 +129,6 @@ include "./public/assets/includes/header.php";
 
 
 <script src="./public/assets/js/ajax/requeteInscription"></script>
+<script src="./public/assets/js/ajax/requeteConnexion"></script>
 </body>
 </html>

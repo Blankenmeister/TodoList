@@ -34,15 +34,15 @@
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text">Email</span>
-  <input type="text" class="form-control" id="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input type="text" class="form-control" id="emailInscription" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text">Mot de passe</span>
-  <input type="password" class="form-control" id="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input type="password" class="form-control" id="passwordInscription" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text">Répéter le mot de passe</span>
-  <input type="password" class="form-control" id="password2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input type="password" class="form-control" id="password2Inscription" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 </div>
 
@@ -51,7 +51,7 @@
       <div class="modal-footer">
         
         <div id="buttonValider">
-        <button class="btn btn-success" onclick="appelAjax(event)">Valider</button>
+        <button class="btn btn-success" onclick="AjaxInscription(event)">Valider</button>
         <div id="message"></div>
         </div>
       </div>
@@ -77,15 +77,15 @@
       <div class="modal-body">
 
 <!-- formulaire Connexion -->
-<form action="src/traitement.php" method="post" onsubmit="return Validation();">
+<form>
       <div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input type="text" class="form-control" id="emailConnexion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Mot de passe</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input type="text" class="form-control" id="passwordConnexion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
         </div>
 </form>
@@ -94,13 +94,15 @@
       <div class="modal-footer">
         
         <div id="buttonValider">
-        <input class="btn btn-success" type="submit" value="Valider">
+        <button class="btn btn-success" onclick="AjaxConnexion(event)">Valider</button>
+        <div id="messageConnexion"></div>
         </div>
       </div>
       
     </div>
   </div>
 </div>
+</form>
 <!-- fin Modal Connexion -->
 
   

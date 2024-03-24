@@ -41,7 +41,7 @@ Le fichier script SQL est stocké dans le dossier Migration.
 
 ### VERSIONS
 Le programme a été conçu avec:  
-PHP 8.2.13
+PHP 8.2.13  
 MySQL 8.2.0 
 
 ### Fichiers:
