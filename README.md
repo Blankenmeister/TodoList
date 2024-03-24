@@ -49,7 +49,7 @@ MySQL 8.2.0
 ### Fichiers:
 Le fichier jpg du MCD se trouve dans le dossier /public/assets/image/MCDsonia.jpg
 
-### lien maquette:
+### Lien maquette:
 https://www.figma.com/file/v3Pz9LV96MfvWeTWwPcX3P/maquette-todo-list?type=design&mode=design&t=kCDeusuVFQz7YHe0-0
 
 
