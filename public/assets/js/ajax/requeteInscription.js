@@ -7,7 +7,7 @@ event.preventDefault();
 
     let nom = document.getElementById('nom').value;
     let prenom = document.getElementById('prenom').value;
-    let mail = document.getElementById('mail').value;
+    let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     let password2 = document.getElementById('password2').value;
 
@@ -22,7 +22,7 @@ event.preventDefault();
     requete.send(JSON.stringify({
       nom: nom,
       prenom: prenom,
-      mail: mail,
+      email: email,
       password: password,
       password2: password2}));
   
@@ -30,7 +30,7 @@ event.preventDefault();
   
       if (requete.readyState === 4 && requete.status === 200) {
         message.innerHTML += JSON.parse(requete.responseText); 
-        // window.location.reload();
+        
       }
     }
   }

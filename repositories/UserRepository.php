@@ -71,8 +71,8 @@ class UserRepository extends Database
         $query = $this->getDb()->prepare($request);
 
         $query->execute([
-            'nom' => $user->getName(),
-            'prenom' => $user->getSurname(),
+            'nom' => $user->getNom(),
+            'prenom' => $user->getPrenom(),
             'email' => $user->getEmail(),
             'motDePasse' => $user->getMotDePasse(),
             'id' => $user->getId(),
@@ -81,7 +81,7 @@ class UserRepository extends Database
 
     public function delete($userId)
     {
-        $request = 'DELETE FROM user WHERE id = :id';
+        $request = 'DELETE FROM todo_user WHERE id = :id';
 
         $query = $this->getDb()->prepare($request);
 
